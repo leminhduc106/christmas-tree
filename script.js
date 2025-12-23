@@ -133,7 +133,7 @@ const createSnow = () => {
 };
 
 const drawBackground = () => {
-  ctx.fillStyle = "rgba(2, 3, 8, 0.25)";
+  ctx.fillStyle = "rgba(255, 192, 203, 0.15)";
   ctx.fillRect(0, 0, width, height);
 };
 
@@ -211,34 +211,34 @@ const renderParticles = () => {
     const alpha = Math.min(1, baseAlpha * flicker + 0.2);
 
     if (p.star) {
-      // Enhanced star glow with multiple colors
+      // Enhanced star glow with pink-gold colors
       const glowIntensity = 0.7 + Math.sin(p.wobble * 1.5) * 0.3;
-      ctx.fillStyle = `rgba(255, 220, 120, ${alpha})`;
+      ctx.fillStyle = `rgba(255, 215, 0, ${alpha})`;
       ctx.shadowBlur = 18 * glowIntensity;
-      ctx.shadowColor = `rgba(255, 209, 102, ${0.9 * glowIntensity})`;
+      ctx.shadowColor = `rgba(255, 140, 0, ${0.9 * glowIntensity})`;
 
       // Draw outer glow
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size * 1.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 180, 80, ${alpha * 0.3})`;
+      ctx.fillStyle = `rgba(255, 165, 0, ${alpha * 0.3})`;
       ctx.fill();
 
       // Draw main star
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 235, 150, ${alpha})`;
+      ctx.fillStyle = `rgba(255, 223, 0, ${alpha})`;
       ctx.fill();
     } else {
-      // Enhanced tree particle colors with variety
+      // Enhanced tree particle colors with red/pink variety
       const greenShade = i % 3;
       const colors = [
-        `rgba(150, 255, 200, ${alpha})`, // Light cyan-green
-        `rgba(180, 242, 255, ${alpha})`, // Light blue
-        `rgba(200, 255, 220, ${alpha})`, // Pale green
+        `rgba(220, 20, 60, ${alpha})`, // Crimson red
+        `rgba(255, 20, 147, ${alpha})`, // Deep pink
+        `rgba(178, 34, 34, ${alpha})`, // Firebrick red
       ];
       ctx.fillStyle = colors[greenShade];
       ctx.shadowBlur = 8;
-      ctx.shadowColor = `rgba(150, 233, 255, ${0.5})`;
+      ctx.shadowColor = `rgba(255, 0, 100, ${0.5})`;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();

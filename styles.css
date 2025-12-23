@@ -442,11 +442,36 @@ header.hero {
   overflow: hidden;
   border-radius: 0;
   border: none;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 209, 102, 0.03),
-    transparent 70%
-  );
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.15) 0px,
+      transparent 1px,
+      transparent 4px,
+      rgba(255, 255, 255, 0.15) 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.15) 0px,
+      transparent 1px,
+      transparent 4px,
+      rgba(255, 255, 255, 0.15) 5px
+    ),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 192, 203, 0.3),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(255, 182, 193, 0.3),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 228, 225, 0.25),
+      transparent 38%
+    ),
+    #ffc2d4;
   box-shadow: none;
   animation: treeReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
